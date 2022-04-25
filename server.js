@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const os = require('os');
-const { url } = require('inspector');
 
 const host = '127.0.0.1';
 const port = 5000;
@@ -36,7 +35,7 @@ const server = http.createServer((req, res) => {
         
                 fs.writeFile('osinfo.json', osinfo, (err) => {
                     if(err){
-                        console.log(error);
+                        console.log(err);
                     };
                 });
                 res.write('Your os have been saved successfully');
